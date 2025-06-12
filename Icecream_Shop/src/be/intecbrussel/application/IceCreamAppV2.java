@@ -1,20 +1,12 @@
 package be.intecbrussel.application;
 
-import be.intecbrussel.eatables.Eatable;
-import be.intecbrussel.eatables.Flavor;
-import be.intecbrussel.eatables.MagnumType;
-import be.intecbrussel.sellers.IceCreamCar;
-import be.intecbrussel.sellers.NoMoreIceCreamException;
-import be.intecbrussel.sellers.PriceList;
-import be.intecbrussel.sellers.Stock;
-
-import static java.lang.Math.round;
-
+import be.intecbrussel.eatables.*;
+import be.intecbrussel.sellers.*;
 public class IceCreamAppV2 {
     public static void main(String[] args) {
 
         PriceList priceList = new PriceList(1, 2, 3);
-        Stock stock = new Stock(1,5,6,4);
+        Stock stock = new Stock(3,5,6,4);
         IceCreamCar iceCreamCar = new IceCreamCar(priceList, stock);
         try{
             Eatable[] orders = new Eatable[]{
@@ -32,9 +24,10 @@ public class IceCreamAppV2 {
         }
         try{
             Eatable[] orders2 = new Eatable[]{
-                    iceCreamCar.orderCone(new Flavor[]{Flavor.BANANA, Flavor.CHOCOLATE}),
-                    iceCreamCar.orderMagnum(MagnumType.BLACKCHOCOLATE),
+                    iceCreamCar.orderIceRocket(),
+                    iceCreamCar.orderIceRocket(),
                     iceCreamCar.orderIceRocket()
+
             };
 
             for (Eatable e : orders2) {
