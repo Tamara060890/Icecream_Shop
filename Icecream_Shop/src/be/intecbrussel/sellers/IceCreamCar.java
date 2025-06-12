@@ -3,8 +3,8 @@ package be.intecbrussel.sellers;
 import be.intecbrussel.eatables.*;
 
 public class IceCreamCar implements IceCreamSeller{
-    private final PriceList priceList;
-    private final Stock stock;
+    private PriceList priceList;
+    private Stock stock;
     private double profit;
 
     public IceCreamCar(PriceList priceList, Stock stock) {
